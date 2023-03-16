@@ -1,0 +1,17 @@
+<?php
+$resourceMedia = $resource->media();
+$resourceClass = $resource->resourceClass();
+$panopto = $this->escapeHtml($resourceClass->label() == "Moving Image");
+?>
+
+<?php if ($resourceMedia): ?>
+<div class="media-embeds">
+    <?php foreach ($resourceMedia as $media): ?>
+      <?php if ($panopto): ?>
+        <iframe src="https://temple.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=<?=  strip_tags($media->render()); ?>&autoplay=false&offerviewer=false&showtitle=false&showbrand=false&captions=false&interactivity=none" height="640px" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+      <?php else: ?>
+        <?php echo $media->render(); ?>
+      <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
