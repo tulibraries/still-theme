@@ -60,5 +60,10 @@ if (!CenterRow) {
                 $('#query').focus();
             }
         });
+
+        $('.menu-toggle').click(function() {
+          $('.nav-menu').toggleClass('open');
+          $('.nav-menu a').first().focus();
+        });
     });
 })(jQuery)

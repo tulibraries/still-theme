@@ -49,10 +49,9 @@ $userBar = $this->userBar();
         <?php echo $userBar; ?>
 
         <header>
-          <?php echo $site->publicNav()->menu()->setPartial('common/accessible-mega-menu.phtml')->renderPartial(); ?>
-          <div class="crnc-banner">
+          <div class="still-banner">
             <h1>
-              <img src="/themes/crnc-theme/asset/img/temple-logo.png" />
+              <img src="/themes/still-theme/asset/img/temple-logo.png" />
               <a href="<?php echo $site->url(); ?>" class="site-title">
               <?php if ($this->themeSetting('logo')): ?>
                   <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
@@ -62,6 +61,17 @@ $userBar = $this->userBar();
               </a>
             </h1>
           </div>
+          <div class="toggle">
+            <button type="button" class="menu-toggle" aria-label="Toggle Menu"> 
+            <span class="navbar-toggler-icon" id="navbar-toggler-icon">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </span>
+            <span class="menu-label">Main Menu</span>
+            </button>
+          </div>
+          <?php echo $site->publicNav()->menu()->setPartial('common/accessible-mega-menu.phtml')->renderPartial(); ?>
         </header>
 
         <div id="wrap">
